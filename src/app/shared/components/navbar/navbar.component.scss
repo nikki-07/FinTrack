@@ -1,0 +1,14 @@
+.navbar-brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: adjust-color($color: #367d66);
+  }
+  
+  .dropdown-toggle::after {
+    display: none; /* Hides default caret */
+  }
+  
+  img.rounded-circle {
+    border: 2px solid white; /* Border for profile image */
+  }
+  

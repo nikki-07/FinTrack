@@ -1,0 +1,36 @@
+<mat-card class="p-1">
+  <div class="card balance-card">
+    <p class="card-title">Balance</p>
+    <h4 class="card-amount">&#8377;{{ balance | number : "1.2-2" }}</h4>
+  </div>
+
+  <!-- Income Card -->
+  <div class="card income-card">
+    <div class="card-content">
+      <div>
+        <p class="card-subtitle">Income</p>
+        <h4 class="card-amount">&#8377;{{ totalIncome | number : "1.2-2" }}</h4>
+      </div>
+      <!-- <div class="card-action">
+      <span>Edit</span>
+      <span class="arrow">&rarr;</span>
+    </div> -->
+    </div>
+  </div>
+
+  <!-- Expenses Card -->
+  <div class="card expense-card">
+    <div class="card-content">
+      <div>
+        <p class="card-subtitle">Expenses</p>
+        <h3 class="card-amount">
+          &#8377;{{ totalExpense | number : "1.2-2" }}
+        </h3>
+      </div>
+      <!-- <div class="card-action">
+      <span>Add Expense</span>
+      <span class="arrow">&rarr;</span>
+    </div> -->
+    </div>
+  </div>
+</mat-card>

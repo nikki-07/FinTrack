@@ -1,0 +1,58 @@
+.card {
+    background-color: #333;
+    color: white;
+    border-radius: 10px; /* Slightly smaller rounded corners */
+    padding: 1rem; /* Reduce padding */
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+  }
+  
+  .balance-card {
+    font-size: 1rem;
+    background-image: url('/assets/background-pattern.svg');
+    background-size: contain;
+  }
+  
+  .card-title {
+    font-size: 0.8rem; /* Smaller font size */
+    margin-bottom: 0.3rem;
+    color: #ddd;
+  }
+  
+  .card-amount {
+    font-size: 1.5rem; /* Reduce font size */
+    font-weight: bold;
+  }
+  
+  .card-subtitle {
+    font-size: 0.8rem;
+    color: #ddd;
+  }
+  
+  .card-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .card-action {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+    color: #ddd;
+    cursor: pointer;
+  }
+  
+  .arrow {
+    font-size: 1rem; /* Reduce arrow size */
+  }
+  
+  .income-card .card-subtitle {
+    color: #32cd32; /* Green color for income */
+  }
+  
+  .expense-card .card-subtitle {
+    color: #ff6347; /* Red color for expenses */
+  }

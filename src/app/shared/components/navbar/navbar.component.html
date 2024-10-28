@@ -1,0 +1,40 @@
+<!-- navbar.component.html -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
+  <div class="container-fluid">
+    <!-- Left Side - App Title -->
+
+    <a class="navbar-brand" href="#">FinTrack</a>
+    <div>
+      <small style="color: aliceblue">Personal finance dashboard</small>
+    </div>
+
+    <!-- Right Side - Profile Dropdown -->
+    <div class="dropdown ms-auto">
+      <button
+        (click)="logOut()"
+        class="btn btn-secondary dropdown-toggle"
+        type="button"
+        id="profileDropdown"
+        data-bs-toggle="dropdown"
+        aria-expanded="false"
+      >
+        <!-- <img
+          src="assets/profile.jpg"
+          alt="Profile"
+          class="rounded-circle"
+          style="width: 30px; height: 30px; margin-right: 5px"
+        /> -->
+
+        <!-- Username -->
+        Log out
+      </button>
+      <ul
+        class="dropdown-menu dropdown-menu-end"
+        aria-labelledby="profileDropdown"
+      >
+        <li><a class="dropdown-item" href="/profile">Profile</a></li>
+        <li><a class="dropdown-item" href="/logout">Logout</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

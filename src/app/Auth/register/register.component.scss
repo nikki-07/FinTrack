@@ -1,0 +1,17 @@
+/* src/app/login/login.component.css and src/app/register/register.component.css */
+
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f8f9fa; /* Light background */
+  }
+  
+  .auth-card {
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: none;
+    border-radius: 10px;
+  }

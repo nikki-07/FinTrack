@@ -1,13 +1,18 @@
+import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
+import { AppModule } from './app.module';
 
 @Component({
   selector: 'app-root',
-  standalone: true,
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  styleUrls: ['./app.component.scss'],
+  standalone:true,
+  imports: [RouterModule]
 })
 export class AppComponent {
   title = 'fintrack';
+  constructor(){
+    console.log('f')
+  }
 }

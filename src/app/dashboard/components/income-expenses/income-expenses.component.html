@@ -1,0 +1,62 @@
+<mat-card class="p-1">
+  <mat-tab-group>
+    <mat-tab label="Expense">
+      <div class="d-flex justify-content-between align-items-center mt-3 mb-2">
+        <h4 class="font-weight-bold text-danger">Expenses</h4>
+        <!-- <button class="btn btn-outline-danger rounded">Add Expenses</button> -->
+      </div>
+
+      <ul class="list-group">
+        <li
+          class="row"
+          *ngFor="let expense of expensesList; let i = index"
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <div class="col-6">
+            <strong>{{ expense.text }}:</strong>
+            <span class="text-secondary">&#8377;{{ expense.amount }}</span>
+            <div>
+              <small class="text-break">{{ expense.description }}</small>
+            </div>
+          </div>
+          <small class="text-muted col-3">{{
+            expense.date | date : "mediumDate"
+          }}</small>
+          <button class="btn"><mat-icon>edit</mat-icon></button>
+          <button class="btn" (click)="delete('expense', expense.id, i)">
+            <mat-icon>delete</mat-icon>
+          </button>
+        </li>
+      </ul>
+    </mat-tab>
+    <mat-tab label="Income">
+      <div class="d-flex justify-content-between align-items-center mt-3 mb-2">
+        <h4 class="font-weight-bold text-primary">Income</h4>
+        <!-- <button class="btn btn-outline-primary rounded">Add Income</button> -->
+      </div>
+
+      <ul class="list-group">
+        <li
+          class="row"
+          *ngFor="let income of incomeList; let i = index"
+          class="list-group-item d-flex justify-content-between align-items-center"
+        >
+          <div class="col-6">
+            <strong>{{ income.text }}:</strong>
+            <span class="text-secondary">&#8377;{{ income.amount }}</span>
+            <div>
+              <small class="text-break">{{ income.description }}</small>
+            </div>
+          </div>
+          <small class="text-muted col-3">{{
+            income.date | date : "mediumDate"
+          }}</small>
+          <button class="btn"><mat-icon>edit</mat-icon></button>
+          <button class="btn">
+            <mat-icon (click)="delete('income', income.id, i)">delete</mat-icon>
+          </button>
+        </li>
+      </ul>
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>

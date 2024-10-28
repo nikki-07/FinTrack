@@ -1,0 +1,104 @@
+<div class="transaction-form">
+  <mat-card>
+    <mat-card-title class="text-center p-2">Add Transaction</mat-card-title>
+    <mat-card-content>
+      <form [formGroup]="transactionForm">
+        <!-- Row 1: Date Picker -->
+        <div class="row">
+          <div class="col-12">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Choose a date</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="date" />
+              <mat-hint>MM/DD/YYYY</mat-hint>
+              <mat-datepicker-toggle
+                matSuffix
+                [for]="picker"
+              ></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!-- Row 2: Transaction Type and Category -->
+        <div class="row">
+          <div class="col-6">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Transaction Type</mat-label>
+              <mat-select formControlName="transaction_type">
+                <mat-option value="income">Income</mat-option>
+                <mat-option value="expense">Expense</mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-6">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Category</mat-label>
+              <mat-select formControlName="category">
+                <mat-option
+                  *ngFor="let category of categoriesList"
+                  [value]="category"
+                  >{{ category }}</mat-option
+                >
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!-- Row 3: Amount and Text -->
+        <div class="row">
+          <div class="col-6">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Amount</mat-label>
+              <input matInput type="number" formControlName="amount" />
+            </mat-form-field>
+            <mat-error
+              *ngIf="
+                transactionForm?.get('amount')?.invalid &&
+                transactionForm?.get('amount')?.touched
+              "
+            >
+              field is required
+            </mat-error>
+          </div>
+          <div class="col-6">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Add Text</mat-label>
+              <input matInput formControlName="text" type="text" />
+            </mat-form-field>
+            <mat-error
+              *ngIf="
+                transactionForm?.get('text')?.invalid &&
+                transactionForm?.get('text')?.touched
+              "
+            >
+              field is required
+            </mat-error>
+          </div>
+        </div>
+
+        <!-- Row 4: Description -->
+        <div class="row">
+          <div class="col-12">
+            <mat-form-field appearance="fill" class="w-100">
+              <mat-label>Description</mat-label>
+              <textarea matInput formControlName="description"></textarea>
+            </mat-form-field>
+          </div>
+        </div>
+
+        <!-- Row 5: Submit Button -->
+        <div class="row">
+          <div class="col-12">
+            <button
+              mat-raised-button
+              class="btn btn-primary w-100"
+              (click)="addTransaction()"
+            >
+              Add Transaction
+            </button>
+          </div>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,36 @@
+canvas {
+    max-width: 1000px; /* Adjust the width as needed */
+    // margin: auto; /* Center the canvas */
+  }
+  /* Styles for the dropdown container */
+div {
+  margin: 20px 0; /* Add some margin for spacing */
+}
+
+/* Label styling */
+label {
+  font-size: 16px; /* Increase font size */
+  margin-right: 10px; /* Space between label and dropdown */
+}
+
+/* Dropdown styling */
+select {
+  padding: 10px; /* Add padding for better click area */
+  font-size: 16px; /* Match font size with label */
+  border: 1px solid #ccc; /* Add border */
+  border-radius: 4px; /* Rounded corners */
+  background-color: #f9f9f9; /* Light background color */
+  cursor: pointer; /* Change cursor on hover */
+  transition: border-color 0.3s; /* Smooth border color transition */
+}
+
+/* Change border color on focus */
+select:focus {
+  border-color: #007bff; /* Change border color on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Change background color on hover */
+select:hover {
+  background-color: #f1f1f1; /* Slightly darker background on hover */
+}
