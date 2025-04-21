@@ -6,13 +6,13 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard.component';
 import { TransactionModule } from '../transaction/transaction.module';
 import { AuthGuard } from '../Auth/auth.guard';
-import { NavbarComponent } from "../shared/components/navbar/navbar.component";
-import { IncomeExpensesComponent } from "./components/income-expenses/income-expenses.component";
+import { NavbarComponent } from '../shared/components/navbar/navbar.component';
+import { IncomeExpensesComponent } from './components/income-expenses/income-expenses.component';
 import { SharedModule } from '../shared/shared.module';
-import { BalanceComponent } from "./components/balance/balance.component";
-import { MonthlyDataChartComponent } from "./components/monthly-data-chart/monthly-data-chart.component";
+import { BalanceComponent } from './components/balance/balance.component';
+import { MonthlyDataChartComponent } from './components/monthly-data-chart/monthly-data-chart.component';
 const dashboardRoutes: Routes = [
-  { path: '', component: DashboardComponent, canActivate: [AuthGuard] }
+  { path: '', component: DashboardComponent, canActivate: [AuthGuard] },
 ];
 
 @NgModule({
@@ -27,7 +27,6 @@ const dashboardRoutes: Routes = [
     BalanceComponent,
     MonthlyDataChartComponent,
     SharedModule,
-  
-]
+  ],
 })
-export class DashboardModule { }
+export class DashboardModule {}

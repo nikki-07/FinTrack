@@ -13,20 +13,34 @@ export class RegisterComponent {
   registerForm: FormGroup;
 
   constructor(private fb: FormBuilder, private authService: AuthService) {
-    this.registerForm = this.fb.group({
-      username:['',Validators.required],
-      email: ['', [Validators.required, Validators.email]],
-      password: ['', Validators.required],
-      confirmPassword: ['', Validators.required],
-    });
+    this.registerForm = this.fb.group(
+      {
+        username: ['', Validators.required],
+        email: ['', [Validators.required, Validators.email]],
+        password: ['', Validators.required],
+        confirmPassword: ['', Validators.required],
+      },
+      {
+        validators: this.passwordMatchValidator,
+      }
+    );
   }
 
   onRegister() {
+    console.log('register', this.registerForm);
+
     if (this.registerForm.valid) {
-      const { email, username, password, confirmPassword } = this.registerForm.value;
+      const { email, username, password, confirmPassword } =
+        this.registerForm.value;
       if (password === confirmPassword) {
-        this.authService.register(email,username, password);
+        this.authService.register(email, username, password);
       }
     }
+  }
+  passwordMatchValidator(formGroup: FormGroup) {
+    const password = formGroup.get('password')?.value;
+    const confirmPassword = formGroup.get('confirmPassword')?.value;
+
+    return password === confirmPassword ? null : { passwordMismatch: true };
   }
 }

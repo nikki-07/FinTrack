@@ -3,18 +3,10 @@ import {
   ChangeDetectorRef,
   Component,
   ElementRef,
-  Input,
   OnInit,
   ViewChild,
 } from '@angular/core';
-import {
-  Chart,
-  registerables,
-  CategoryScale,
-  LinearScale,
-  BarElement,
-  BarController,
-} from 'chart.js';
+import { Chart, registerables } from 'chart.js';
 import { FirebaseService } from '../../../common-services/firebase.service';
 Chart.register(...registerables);
 
@@ -27,8 +19,6 @@ Chart.register(...registerables);
 })
 export class MonthlyDataChartComponent implements OnInit {
   @ViewChild('mychart') mychart!: ElementRef<HTMLCanvasElement>;
-  // @Input() incomes: any;
-  // @Input() expenses: any;
   incomes: any;
   expenses: any;
   availableYears: number[] = [];

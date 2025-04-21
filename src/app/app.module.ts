@@ -17,6 +17,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { AuthModule } from '@angular/fire/auth';
 import { AuthService } from './Auth/auth.service';
 import { SharedModule } from './shared/shared.module';
+
 @NgModule({
   declarations: [
     // AppComponent,
@@ -30,14 +31,20 @@ import { SharedModule } from './shared/shared.module';
     CommonModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    MatCardModule,  // Angular Material modules
+    MatCardModule, // Angular Material modules
     MatError,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
     AuthModule,
-    SharedModule
-    
+    SharedModule,
+    ToastrModule.forRoot({
+      timeOut: 5000, // Change the display duration
+      positionClass: 'toast-top-right', // Change the position
+      preventDuplicates: true, // Prevent duplicate notifications
+      closeButton: true, // Show close button
+      progressBar: true, // Show a progress bar
+    }),
     // ToastrModule.forRoot({ // Config options for Toastr
     //   timeOut: 3000,
     //   positionClass: 'toast-top-right',
@@ -47,9 +54,8 @@ import { SharedModule } from './shared/shared.module';
   providers: [
     // AuthService
   ],
-  exports:[],
+  exports: [],
   bootstrap: [],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
-export class AppModule { }
-
+export class AppModule {}

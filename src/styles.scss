@@ -2,3 +2,50 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.toast-top-right {
+    bottom: 20px;
+    right: 20px;
+    padding: 5px;
+    border-radius: 5px;
+    margin: 5px;
+  }
+  /* General Toast Styling */
+.toast {
+    border-radius: 8px;
+    font-family: 'Arial', sans-serif;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+  }
+  
+  /* Success Toast */
+  .toast-success {
+    background-color: #28a745; /* Custom green color */
+    color: #fff;
+  }
+  
+  .toast-success .toast-message::before {
+    content: '\f00c'; /* FontAwesome check icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-right: 10px;
+  }
+  
+  /* Error Toast */
+  .toast-error {
+    background-color: #dc3545; /* Custom red color */
+    color: #fff;
+  }
+  
+  .toast-error .toast-message::before {
+    content: '\f057'; /* FontAwesome times icon */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    margin-right: 10px;
+  }
+  
+  /* Progress Bar Customization */
+  .toast-progress {
+    background-color: #ffc107; /* Custom color for progress bar */
+  }
+  

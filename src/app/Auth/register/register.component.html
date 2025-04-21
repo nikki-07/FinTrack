@@ -3,7 +3,7 @@
   <div class="card auth-card">
     <div class="card-body">
       <h3 class="card-title text-center">Register</h3>
-      <form [formGroup]="registerForm" (onSubmit)="onRegister()">
+      <form [formGroup]="registerForm" (ngSubmit)="onRegister()">
         <div class="form-group mb-3">
           <label for="name">Name</label>
           <input
@@ -36,6 +36,26 @@
             name="password"
             required
           />
+        </div>
+        <div class="form-group mb-3">
+          <label for="confirmPassword">Confirm password</label>
+          <input
+            type="password"
+            id="confirmPassword"
+            class="form-control"
+            formControlName="confirmPassword"
+            name="confirmPassword"
+            required
+          />
+        </div>
+        <div
+          *ngIf="
+            registerForm.hasError('passwordMismatch') &&
+            registerForm.get('confirmPassword')?.touched
+          "
+          class="text-danger"
+        >
+          Passwords do not match.
         </div>
         <button type="submit" class="btn btn-primary w-100">Register</button>
       </form>
