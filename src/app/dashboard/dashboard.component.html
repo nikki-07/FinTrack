@@ -1,24 +1,28 @@
 <app-navbar></app-navbar>
 <div class="dashboard">
   <div class="row">
-    <div class="col-3">
+    <div class="col-3 balance-container">
       <app-balance
         [balance]="balance"
         [totalIncome]="totalIncome"
         [totalExpense]="totalExpense"
       ></app-balance>
     </div>
-    <div class="col-4">
-      <app-transaction (updateData)="getData()"></app-transaction>
+    <div class="col-9">
+      <div class="row">
+        <div class="col-6">
+          <app-transaction (updateData)="getData()"></app-transaction>
+        </div>
+        <div class="col-6">
+          <app-income-expenses
+            [incomeList]="incomes"
+            [expensesList]="expenses"
+          ></app-income-expenses>
+        </div>
+      </div>
+      <div>
+        <app-monthly-data-chart></app-monthly-data-chart>
+      </div>
     </div>
-    <div class="col-4">
-      <app-income-expenses
-        [incomeList]="incomes"
-        [expensesList]="expenses"
-      ></app-income-expenses>
-    </div>
-  </div>
-  <div>
-    <app-monthly-data-chart></app-monthly-data-chart>
   </div>
 </div>
