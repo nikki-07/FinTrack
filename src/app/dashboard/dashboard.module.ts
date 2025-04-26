@@ -25,7 +25,6 @@ const dashboardRoutes: Routes = [
     NavbarComponent,
     IncomeExpensesComponent,
     BalanceComponent,
-    MonthlyDataChartComponent,
     SharedModule,
   ],
 })
