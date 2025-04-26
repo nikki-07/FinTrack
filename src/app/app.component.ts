@@ -7,12 +7,10 @@ import { AppModule } from './app.module';
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss'],
-  standalone:true,
-  imports: [RouterModule]
+  standalone: true,
+  imports: [RouterModule],
 })
 export class AppComponent {
   title = 'fintrack';
-  constructor(){
-    console.log('f')
-  }
+  constructor() {}
 }

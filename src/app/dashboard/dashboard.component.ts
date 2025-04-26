@@ -22,7 +22,6 @@ export class DashboardComponent implements OnInit {
     this.expenses = await this.firebaseService.getExpenses();
     this.incomes = await this.firebaseService.getIncomes();
     this.calculateBalance();
-    console.log(this.incomes);
   }
   calculateBalance() {
     this.totalIncome = this.incomes.reduce(
