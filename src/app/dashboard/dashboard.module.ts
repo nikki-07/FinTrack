@@ -10,7 +10,6 @@ import { NavbarComponent } from '../shared/components/navbar/navbar.component';
 import { IncomeExpensesComponent } from './components/income-expenses/income-expenses.component';
 import { SharedModule } from '../shared/shared.module';
 import { BalanceComponent } from './components/balance/balance.component';
-import { MonthlyDataChartComponent } from './components/monthly-data-chart/monthly-data-chart.component';
 const dashboardRoutes: Routes = [
   { path: '', component: DashboardComponent, canActivate: [AuthGuard] },
 ];
@@ -22,8 +21,6 @@ const dashboardRoutes: Routes = [
     DashboardRoutingModule,
     TransactionModule,
     RouterModule.forChild(dashboardRoutes),
-    NavbarComponent,
-    IncomeExpensesComponent,
     BalanceComponent,
     SharedModule,
   ],

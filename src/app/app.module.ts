@@ -15,7 +15,6 @@ import { RouterModule } from '@angular/router';
 import { routes } from './app.routes';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthModule } from '@angular/fire/auth';
-import { AuthService } from './Auth/auth.service';
 import { SharedModule } from './shared/shared.module';
 
 @NgModule({
@@ -45,11 +44,6 @@ import { SharedModule } from './shared/shared.module';
       closeButton: true, // Show close button
       progressBar: true, // Show a progress bar
     }),
-    // ToastrModule.forRoot({ // Config options for Toastr
-    //   timeOut: 3000,
-    //   positionClass: 'toast-top-right',
-    //   preventDuplicates: true,
-    // }),
   ],
   providers: [
     // AuthService
