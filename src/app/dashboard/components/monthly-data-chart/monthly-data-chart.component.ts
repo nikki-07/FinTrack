@@ -8,12 +8,13 @@ import {
 } from '@angular/core';
 import { Chart, registerables } from 'chart.js';
 import { FirebaseService } from '../../../common-services/firebase.service';
+import { SharedModule } from '../../../shared/shared.module';
 Chart.register(...registerables);
 
 @Component({
   selector: 'app-monthly-data-chart',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SharedModule],
   templateUrl: './monthly-data-chart.component.html',
   styleUrls: ['./monthly-data-chart.component.scss'],
 })

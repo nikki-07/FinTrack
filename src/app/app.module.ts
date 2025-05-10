@@ -20,11 +20,10 @@ import { SharedModule } from './shared/shared.module';
 @NgModule({
   declarations: [
     // AppComponent,
-    LoginComponent,
-    RegisterComponent,
   ],
   imports: [
     BrowserModule,
+    AppComponent,
     RouterModule.forRoot(routes),
     FormsModule,
     CommonModule,
@@ -48,7 +47,7 @@ import { SharedModule } from './shared/shared.module';
   providers: [
     // AuthService
   ],
-  exports: [],
+  exports: [SharedModule],
   bootstrap: [],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
